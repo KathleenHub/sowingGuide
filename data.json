@@ -1,14 +1,254 @@
 [
-    { "month": "January", "crops": ["Lettuce (indoors)", "Spinach (indoors)", "Carrot (indoors)", "Parsley"] },
-    { "month": "February", "crops": ["Tomato (indoors)", "Pepper (indoors)", "Cucumber (indoors)", "Leek"] },
-    { "month": "March", "crops": ["Lettuce", "Radish", "Carrot", "Spinach", "Peas"] },
-    { "month": "April", "crops": ["Potatoes", "Beetroot", "Onions", "Broccoli", "Cabbage"] },
-    { "month": "May", "crops": ["Sweet Corn", "Zucchini", "Pumpkin", "Beans", "Basil"] },
-    { "month": "June", "crops": ["Endive", "Chicory", "Kohlrabi", "Cauliflower"] },
-    { "month": "July", "crops": ["Fennel", "Spinach (autumn crop)", "Carrots (autumn crop)", "Turnips"] },
-    { "month": "August", "crops": ["Chard", "Chinese Cabbage", "Winter Radish", "Beetroot (late crop)"] },
-    { "month": "September", "crops": ["Garlic", "Onions (overwintering)", "Spinach (winter crop)", "Lamb's Lettuce"] },
-    { "month": "October", "crops": ["Broad Beans (overwintering)", "Peas (overwintering)", "Winter Lettuce"] },
-    { "month": "November", "crops": ["Garlic (late)", "Broad Beans (late)", "Lamb's Lettuce"] },
-    { "month": "December", "crops": ["Winter Lettuce (indoors)", "Parsley (indoors)", "Spinach (indoors)"] }
+    {
+        "month": "January",
+        "crops": [
+            {
+                "name": "Lettuce (indoors)",
+                "tips": "Start indoors in a warm, sunny spot. Transplant outdoors once temperatures rise above 10°C. Space plants 20-25 cm apart."
+            },
+            {
+                "name": "Spinach (indoors)",
+                "tips": "Spinach grows well in cooler temperatures. Ensure good drainage and indirect sunlight. Space plants 15 cm apart."
+            },
+            {
+                "name": "Carrot (indoors)",
+                "tips": "Carrots need well-drained, loose soil. Start indoors in pots and transplant once conditions improve. Thin to 5 cm apart."
+            },
+            {
+                "name": "Parsley",
+                "tips": "Parsley grows slowly, so start indoors. Use a moist, well-draining potting mix. Space plants 15 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "February",
+        "crops": [
+            {
+                "name": "Tomato (indoors)",
+                "tips": "Start seeds indoors under a grow light, 6-8 weeks before the last frost date. Space seedlings 50 cm apart."
+            },
+            {
+                "name": "Pepper (indoors)",
+                "tips": "Peppers need a warm environment to germinate. Use a heat mat to ensure consistent warmth. Transplant after the last frost."
+            },
+            {
+                "name": "Cucumber (indoors)",
+                "tips": "Start indoors in pots and transplant after the last frost. Keep them in a sunny location. Space 30-40 cm apart."
+            },
+            {
+                "name": "Leek",
+                "tips": "Leeks require deep, well-drained soil. Start indoors and transplant when they are around 15 cm tall. Space 25 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "March",
+        "crops": [
+            {
+                "name": "Lettuce",
+                "tips": "Direct sow outdoors or transplant seedlings started indoors. Prefers cool, well-drained soil. Space plants 20 cm apart."
+            },
+            {
+                "name": "Radish",
+                "tips": "Sow directly outdoors in early spring. Needs light, well-drained soil. Space seeds 2 cm apart."
+            },
+            {
+                "name": "Carrot",
+                "tips": "Sow directly in the garden in loose, sandy soil. Space seeds 2 cm apart and thin to 5 cm after germination."
+            },
+            {
+                "name": "Spinach",
+                "tips": "Sow directly outdoors in early spring. Prefers slightly acidic soil and cool weather. Space seeds 20 cm apart."
+            },
+            {
+                "name": "Peas",
+                "tips": "Peas thrive in cool conditions. Sow directly outdoors in well-drained soil. Space seeds 5 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "April",
+        "crops": [
+            {
+                "name": "Potatoes",
+                "tips": "Plant seed potatoes in well-drained, fertile soil. Space 30 cm apart. Harvest when plants start to yellow."
+            },
+            {
+                "name": "Beetroot",
+                "tips": "Direct sow in well-drained, fertile soil. Space seeds 5 cm apart and thin to 10 cm after germination."
+            },
+            {
+                "name": "Onions",
+                "tips": "Plant onion sets or seeds in loose, fertile soil. Space sets 10 cm apart."
+            },
+            {
+                "name": "Broccoli",
+                "tips": "Start seeds indoors and transplant once the seedlings are large enough. Space plants 30 cm apart."
+            },
+            {
+                "name": "Cabbage",
+                "tips": "Start indoors and transplant after 4-6 weeks. Prefers cool weather. Space plants 30-40 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "May",
+        "crops": [
+            {
+                "name": "Sweet Corn",
+                "tips": "Direct sow in warm soil. Needs full sun and fertile, well-drained soil. Space plants 30 cm apart."
+            },
+            {
+                "name": "Zucchini",
+                "tips": "Sow directly in the garden. Needs full sun and fertile soil. Space plants 40 cm apart."
+            },
+            {
+                "name": "Pumpkin",
+                "tips": "Plant in rich, well-drained soil with plenty of sunlight. Space plants 80 cm apart."
+            },
+            {
+                "name": "Beans",
+                "tips": "Sow directly outdoors in well-drained soil. Space seeds 5 cm apart and thin to 20 cm."
+            },
+            {
+                "name": "Basil",
+                "tips": "Plant in warm, sunny locations with well-drained soil. Space plants 30 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "June",
+        "crops": [
+            {
+                "name": "Endive",
+                "tips": "Direct sow in loose, well-drained soil. Space seeds 20 cm apart. Prefers cool temperatures."
+            },
+            {
+                "name": "Chicory",
+                "tips": "Sow directly outdoors in moist, well-drained soil. Space plants 25 cm apart."
+            },
+            {
+                "name": "Kohlrabi",
+                "tips": "Sow directly outdoors in well-drained soil. Space plants 15 cm apart."
+            },
+            {
+                "name": "Cauliflower",
+                "tips": "Start indoors and transplant once seedlings are large enough. Space plants 40 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "July",
+        "crops": [
+            {
+                "name": "Fennel",
+                "tips": "Sow directly in fertile, well-drained soil. Needs full sun. Space plants 30 cm apart."
+            },
+            {
+                "name": "Spinach (autumn crop)",
+                "tips": "Direct sow outdoors for an autumn harvest. Prefers cooler weather. Space seeds 20 cm apart."
+            },
+            {
+                "name": "Carrots (autumn crop)",
+                "tips": "Direct sow outdoors in well-drained soil. Space seeds 2 cm apart and thin to 5 cm."
+            },
+            {
+                "name": "Turnips",
+                "tips": "Sow directly in loose, fertile soil. Space seeds 5 cm apart and thin to 10 cm after germination."
+            }
+        ]
+    },
+    {
+        "month": "August",
+        "crops": [
+            {
+                "name": "Chard",
+                "tips": "Direct sow in well-drained, fertile soil. Space seeds 10 cm apart and thin to 30 cm after germination."
+            },
+            {
+                "name": "Chinese Cabbage",
+                "tips": "Direct sow in fertile, well-drained soil. Needs cool temperatures. Space plants 30 cm apart."
+            },
+            {
+                "name": "Winter Radish",
+                "tips": "Direct sow outdoors in well-drained soil. Space seeds 2 cm apart and thin to 5 cm."
+            },
+            {
+                "name": "Beetroot (late crop)",
+                "tips": "Direct sow for a late autumn harvest. Space seeds 5 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "September",
+        "crops": [
+            {
+                "name": "Garlic",
+                "tips": "Plant garlic cloves in fertile, well-drained soil. Space cloves 15 cm apart. Harvest in late spring."
+            },
+            {
+                "name": "Onions (overwintering)",
+                "tips": "Plant onion sets in loose, well-drained soil. Space sets 10 cm apart."
+            },
+            {
+                "name": "Spinach (winter crop)",
+                "tips": "Sow in well-drained soil for a winter harvest. Prefers cooler temperatures."
+            },
+            {
+                "name": "Lamb's Lettuce",
+                "tips": "Sow directly in fertile soil. Space plants 10 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "October",
+        "crops": [
+            {
+                "name": "Broad Beans (overwintering)",
+                "tips": "Sow directly outdoors for a spring harvest. Space seeds 5 cm apart."
+            },
+            {
+                "name": "Peas (overwintering)",
+                "tips": "Sow in well-drained soil for an early spring harvest."
+            },
+            {
+                "name": "Winter Lettuce",
+                "tips": "Sow in well-drained soil for a winter crop. Prefers cool temperatures."
+            }
+        ]
+    },
+    {
+        "month": "November",
+        "crops": [
+            {
+                "name": "Garlic (late)",
+                "tips": "Plant cloves in fertile soil for a summer harvest. Space cloves 15 cm apart."
+            },
+            {
+                "name": "Broad Beans (late)",
+                "tips": "Plant beans in well-drained soil for an early spring harvest."
+            },
+            {
+                "name": "Lamb's Lettuce",
+                "tips": "Sow directly in fertile, moist soil. Space plants 10 cm apart."
+            }
+        ]
+    },
+    {
+        "month": "December",
+        "crops": [
+            {
+                "name": "Winter Lettuce (indoors)",
+                "tips": "Start indoors in a cool, bright location. Space plants 20 cm apart."
+            },
+            {
+                "name": "Parsley (indoors)",
+                "tips": "Grow indoors in moist, well-draining soil. Space plants 15 cm apart."
+            },
+            {
+                "name": "Spinach (indoors)",
+                "tips": "Plant in a cool location with indirect light. Space plants 20 cm apart."
+            }
+        ]
+    }
 ]
