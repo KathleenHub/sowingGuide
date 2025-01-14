@@ -1,0 +1,4 @@
+[
+    { "month": "January", "crops": ["Lettuce", "Spinach", "Carrot"] },
+    { "month": "February", "crops": ["Tomato", "Pepper", "Cucumber"] }
+]
