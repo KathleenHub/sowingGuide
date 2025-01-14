@@ -1,4 +1,14 @@
 [
-    { "month": "January", "crops": ["Lettuce", "Spinach", "Carrot"] },
-    { "month": "February", "crops": ["Tomato", "Pepper", "Cucumber"] }
+    { "month": "January", "crops": ["Lettuce (indoors)", "Spinach (indoors)", "Carrot (indoors)", "Parsley"] },
+    { "month": "February", "crops": ["Tomato (indoors)", "Pepper (indoors)", "Cucumber (indoors)", "Leek"] },
+    { "month": "March", "crops": ["Lettuce", "Radish", "Carrot", "Spinach", "Peas"] },
+    { "month": "April", "crops": ["Potatoes", "Beetroot", "Onions", "Broccoli", "Cabbage"] },
+    { "month": "May", "crops": ["Sweet Corn", "Zucchini", "Pumpkin", "Beans", "Basil"] },
+    { "month": "June", "crops": ["Endive", "Chicory", "Kohlrabi", "Cauliflower"] },
+    { "month": "July", "crops": ["Fennel", "Spinach (autumn crop)", "Carrots (autumn crop)", "Turnips"] },
+    { "month": "August", "crops": ["Chard", "Chinese Cabbage", "Winter Radish", "Beetroot (late crop)"] },
+    { "month": "September", "crops": ["Garlic", "Onions (overwintering)", "Spinach (winter crop)", "Lamb's Lettuce"] },
+    { "month": "October", "crops": ["Broad Beans (overwintering)", "Peas (overwintering)", "Winter Lettuce"] },
+    { "month": "November", "crops": ["Garlic (late)", "Broad Beans (late)", "Lamb's Lettuce"] },
+    { "month": "December", "crops": ["Winter Lettuce (indoors)", "Parsley (indoors)", "Spinach (indoors)"] }
 ]
