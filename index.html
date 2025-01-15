@@ -3,79 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sowing Guide</title>
+    <title>Firestore Data Seeder</title>
     <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js"></script>
 </head>
 <body>
-    <h1>Sowing Guide</h1>
-    <label for="month">Select Month:</label>
-    <select id="month">
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        <option value="April">April</option>
-        <option value="May">May</option>
-        <option value="June">June</option>
-        <option value="July">July</option>
-        <option value="August">August</option>
-        <option value="September">September</option>
-        <option value="October">October</option>
-        <option value="November">November</option>
-        <option value="December">December</option>
-    </select>
-    <button onclick="showCrops()">Get Crops</button>
-    <ul id="crop-list"></ul>
+    <h1>Firestore Seeder</h1>
+    <button id="seed-data">Seed Data</button>
+    <p id="status"></p>
 
     <script>
-        // Your Firebase configuration
-//
-
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
-        import { getAnalytics } from "firebase/analytics";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-        apiKey: "AIzaSyAOS7R_l0Hg4m6jxak4_n8otbacrKPotVY",
-        authDomain: "sowingguide.firebaseapp.com",
-        projectId: "sowingguide",
-        storageBucket: "sowingguide.firebasestorage.app",
-        messagingSenderId: "1019506440289",
-        appId: "1:1019506440289:web:0446fcb79f737ed5651220",
-        measurementId: "G-DE0NZPJ3F0"
-        };
+            apiKey: "AIzaSyAOS7R_l0Hg4m6jxak4_n8otbacrKPotVY",
+            authDomain: "sowingguide.firebaseapp.com",
+            projectId: "sowingguide",
+            storageBucket: "sowingguide.firebasestorage.app",
+            messagingSenderId: "1019506440289",
+            appId: "1:1019506440289:web:0446fcb79f737ed5651220",
+            measurementId: "G-DE0NZPJ3F0"
+            };
 
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-//
-        
-
-        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        async function showCrops() {
-            const month = document.getElementById('month').value;
-            const cropsRef = db.collection('sowing_guide').doc(month);
-            const doc = await cropsRef.get();
+        // Data for all months
+        const sowingData = {
+            January: {
+                crops: [
+                    { name: "Lettuce (indoors)", tips: "Start indoors in a warm spot. Transplant when temperatures rise above 10°C." },
+                    { name: "Spinach (indoors)", tips: "Ensure good drainage and indirect sunlight." }
+                ]
+            },
+            February: {
+                crops: [
+                    { name: "Chillies (indoors)", tips: "Plant in seed trays and keep in a heated propagator." },
+                    { name: "Peppers (indoors)", tips: "Ensure consistent warmth for good germination." }
+                ]
+            },
+            March: {
+                crops: [
+                    { name: "Carrots (outdoors)", tips: "Sow directly into well-drained soil." },
+                    { name: "Beetroot (outdoors)", tips: "Plant in rows, thinning seedlings as they grow." }
+                ]
+            },
+            // Add similar data for April to December
+            // ...
+        };
 
-            const cropList = document.getElementById('crop-list');
-            if (doc.exists) {
-                const crops = doc.data().crops;
-                cropList.innerHTML = crops.map(crop => `
-                    <li>
-                        <strong>${crop.name}</strong><br>
-                        <em>Tips: </em> ${crop.tips}
-                    </li>
-                `).join('');
-            } else {
-                cropList.innerHTML = `<li>No data available for ${month}</li>`;
+        // Function to seed data
+        async function seedData() {
+            const status = document.getElementById('status');
+            try {
+                for (const [month, data] of Object.entries(sowingData)) {
+                    await db.collection('SowingGuide').doc(month).set(data);
+                    console.log(`Data for ${month} added.`);
+                }
+                status.textContent = 'Seeding completed successfully!';
+            } catch (error) {
+                console.error('Error seeding data:', error);
+                status.textContent = 'Error occurred while seeding data. Check console for details.';
             }
         }
+
+        // Add event listener to the button
+        document.getElementById('seed-data').addEventListener('click', seedData);
     </script>
 </body>
 </html>
+
