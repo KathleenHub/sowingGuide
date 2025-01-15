@@ -52,21 +52,22 @@
             // ...
         };
 
-        // Function to seed data
+
+        
         async function seedData() {
             const status = document.getElementById('status');
             try {
                 for (const [month, data] of Object.entries(sowingData)) {
+                    console.log(`Adding data for ${month}:`, data); // Debug log
                     await db.collection('SowingGuide').doc(month).set(data);
-                    console.log(`Data for ${month} added.`);
+                    console.log(`Data for ${month} added successfully.`);
                 }
                 status.textContent = 'Seeding completed successfully!';
             } catch (error) {
                 console.error('Error seeding data:', error);
-                status.textContent = 'Error occurred while seeding data. Check console for details.';
+                status.textContent = `Error occurred while seeding data: ${error.message}`;
             }
-        }
-
+}
         // Add event listener to the button
         document.getElementById('seed-data').addEventListener('click', seedData);
     </script>
