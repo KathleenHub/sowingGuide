@@ -28,8 +28,10 @@
         import { initializeApp } from "firebase/app";
 
         const app = initializeApp(firebaseConfig);
+        import { getFirestore } from "firebase/firestore";
 
-        const db = firebase.firestore();
+        const db = getFirestore(app);
+
 
         // Data for all months
         const sowingData = {
