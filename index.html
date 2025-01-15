@@ -25,7 +25,10 @@
             };
 
         // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
+        import { initializeApp } from "firebase/app";
+
+        const app = initializeApp(firebaseConfig);
+
         const db = firebase.firestore();
 
         // Data for all months
