@@ -12,8 +12,10 @@
     <button id="seed-data">Seed Data</button>
     <p id="status"></p>
 
-    <script>
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+    
         const firebaseConfig = {
             apiKey: "AIzaSyAOS7R_l0Hg4m6jxak4_n8otbacrKPotVY",
             authDomain: "sowingguide.firebaseapp.com",
@@ -23,14 +25,13 @@
             appId: "1:1019506440289:web:0446fcb79f737ed5651220",
             measurementId: "G-DE0NZPJ3F0"
             };
-
-        // Initialize Firebase
-        import { initializeApp } from "firebase/app";
-
+    
         const app = initializeApp(firebaseConfig);
-        import { getFirestore } from "firebase/firestore";
-
         const db = getFirestore(app);
+    
+        console.log("Firebase initialized and Firestore connected:", db);
+
+
 
 
         // Data for all months
