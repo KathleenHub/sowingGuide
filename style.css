@@ -30,75 +30,73 @@ h1 {
         #9d5bb5 300deg 330deg,
         #c857ff 330deg 360deg
     );
-    cursor: pointer;
 }
 
 .month-slice {
     position: absolute;
-    width: 50%;
-    height: 50%;
-    transform-origin: 100% 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50%);
 }
 
 .month-slice span {
     position: absolute;
-    top: -10px;
-    transform: translateY(-50%);
+    transform-origin: 150px 150px;
+    width: 30px;
+    text-align: center;
     font-size: 12px;
     font-weight: bold;
     color: #fff;
     pointer-events: none;
 }
 
-.month-slice:nth-child(1) {
-    transform: rotate(15deg) translate(100%) rotate(-15deg);
+/* Position each label around the chart */
+.month-slice:nth-child(1) span {
+    transform: rotate(15deg) translate(130px) rotate(-15deg);
 }
 
-.month-slice:nth-child(2) {
-    transform: rotate(45deg) translate(100%) rotate(-45deg);
+.month-slice:nth-child(2) span {
+    transform: rotate(45deg) translate(130px) rotate(-45deg);
 }
 
-.month-slice:nth-child(3) {
-    transform: rotate(75deg) translate(100%) rotate(-75deg);
+.month-slice:nth-child(3) span {
+    transform: rotate(75deg) translate(130px) rotate(-75deg);
 }
 
-.month-slice:nth-child(4) {
-    transform: rotate(105deg) translate(100%) rotate(-105deg);
+.month-slice:nth-child(4) span {
+    transform: rotate(105deg) translate(130px) rotate(-105deg);
 }
 
-.month-slice:nth-child(5) {
-    transform: rotate(135deg) translate(100%) rotate(-135deg);
+.month-slice:nth-child(5) span {
+    transform: rotate(135deg) translate(130px) rotate(-135deg);
 }
 
-.month-slice:nth-child(6) {
-    transform: rotate(165deg) translate(100%) rotate(-165deg);
+.month-slice:nth-child(6) span {
+    transform: rotate(165deg) translate(130px) rotate(-165deg);
 }
 
-.month-slice:nth-child(7) {
-    transform: rotate(195deg) translate(100%) rotate(-195deg);
+.month-slice:nth-child(7) span {
+    transform: rotate(195deg) translate(130px) rotate(-195deg);
 }
 
-.month-slice:nth-child(8) {
-    transform: rotate(225deg) translate(100%) rotate(-225deg);
+.month-slice:nth-child(8) span {
+    transform: rotate(225deg) translate(130px) rotate(-225deg);
 }
 
-.month-slice:nth-child(9) {
-    transform: rotate(255deg) translate(100%) rotate(-255deg);
+.month-slice:nth-child(9) span {
+    transform: rotate(255deg) translate(130px) rotate(-255deg);
 }
 
-.month-slice:nth-child(10) {
-    transform: rotate(285deg) translate(100%) rotate(-285deg);
+.month-slice:nth-child(10) span {
+    transform: rotate(285deg) translate(130px) rotate(-285deg);
 }
 
-.month-slice:nth-child(11) {
-    transform: rotate(315deg) translate(100%) rotate(-315deg);
+.month-slice:nth-child(11) span {
+    transform: rotate(315deg) translate(130px) rotate(-315deg);
 }
 
-.month-slice:nth-child(12) {
-    transform: rotate(345deg) translate(100%) rotate(-345deg);
+.month-slice:nth-child(12) span {
+    transform: rotate(345deg) translate(130px) rotate(-345deg);
 }
 
 .crop {
