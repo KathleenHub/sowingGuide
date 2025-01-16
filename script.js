@@ -37,6 +37,7 @@ const sowingPieChart = new Chart(ctx, {
         }],
     },
     options: {
+        responsive: true,
         plugins: {
             legend: { position: "top" },
         },
