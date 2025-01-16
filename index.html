@@ -4,125 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sowing Guide</title>
-    <script type="module">
-        // Import Firebase modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        import { getFirestore, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
-
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAOS7R_l0Hg4m6jxak4_n8otbacrKPotVY",
-            authDomain: "sowingguide.firebaseapp.com",
-            projectId: "sowingguide",
-            storageBucket: "sowingguide.appspot.com",
-            messagingSenderId: "1019506440289",
-            appId: "1:1019506440289:web:0446fcb79f737ed5651220",
-            measurementId: "G-DE0NZPJ3F0"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Function to fetch and display sowing data
-        async function fetchSowingData(month) {
-            const status = document.getElementById("status");
-            const dataContainer = document.getElementById("data-container");
-            dataContainer.innerHTML = ""; // Clear previous data
-            status.textContent = "Loading data...";
-
-            try {
-                const docRef = doc(collection(db, "SowingGuide"), month);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const sowingData = docSnap.data();
-                    const crops = sowingData.crops;
-
-                    // Create and display crop information
-                    crops.forEach(crop => {
-                        const cropDiv = document.createElement("div");
-                        cropDiv.className = "crop";
-
-                        const name = document.createElement("h3");
-                        name.textContent = crop.name;
-
-                        const tips = document.createElement("p");
-                        tips.textContent = `Tips: ${crop.tips}`;
-
-                        cropDiv.appendChild(name);
-                        cropDiv.appendChild(tips);
-                        dataContainer.appendChild(cropDiv);
-                    });
-
-                    status.textContent = `Sowing guide for ${month}`;
-                } else {
-                    status.textContent = `No data found for ${month}`;
-                }
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                status.textContent = "Error loading data. Please try again.";
-            }
-        }
-
-        // Event listener for month selection
-        document.addEventListener("DOMContentLoaded", () => {
-            const monthSelect = document.getElementById("month");
-            const fetchButton = document.getElementById("fetch-data");
-
-            fetchButton.addEventListener("click", () => {
-                const selectedMonth = monthSelect.value;
-                fetchSowingData(selectedMonth);
-            });
-        });
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .crop {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 5px;
-        }
-        h1 {
-            text-align: center;
-        }
-        #data-container {
-            margin-top: 20px;
-        }
-        select, button {
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Sowing Guide</h1>
-    <p>Select a month to view crops you can sow:</p>
-    <select id="month">
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        <option value="April">April</option>
-        <option value="May">May</option>
-        <option value="June">June</option>
-        <option value="July">July</option>
-        <option value="August">August</option>
-        <option value="September">September</option>
-        <option value="October">October</option>
-        <option value="November">November</option>
-        <option value="December">December</option>
-    </select>
-    <button id="fetch-data">Show Sowing Guide</button>
+    <p>Click on a section of the pie chart to view the sowing guide for that month:</p>
+    <div class="pie-chart">
+        <div class="month-slice" data-month="January" style="transform: rotate(0deg) translate(100%) rotate(0deg);"><span>Jan</span></div>
+        <div class="month-slice" data-month="February" style="transform: rotate(30deg) translate(100%) rotate(-30deg);"><span>Feb</span></div>
+        <div class="month-slice" data-month="March" style="transform: rotate(60deg) translate(100%) rotate(-60deg);"><span>Mar</span></div>
+        <div class="month-slice" data-month="April" style="transform: rotate(90deg) translate(100%) rotate(-90deg);"><span>Apr</span></div>
+        <div class="month-slice" data-month="May" style="transform: rotate(120deg) translate(100%) rotate(-120deg);"><span>May</span></div>
+        <div class="month-slice" data-month="June" style="transform: rotate(150deg) translate(100%) rotate(-150deg);"><span>Jun</span></div>
+        <div class="month-slice" data-month="July" style="transform: rotate(180deg) translate(100%) rotate(-180deg);"><span>Jul</span></div>
+        <div class="month-slice" data-month="August" style="transform: rotate(210deg) translate(100%) rotate(-210deg);"><span>Aug</span></div>
+        <div class="month-slice" data-month="September" style="transform: rotate(240deg) translate(100%) rotate(-240deg);"><span>Sep</span></div>
+        <div class="month-slice" data-month="October" style="transform: rotate(270deg) translate(100%) rotate(-270deg);"><span>Oct</span></div>
+        <div class="month-slice" data-month="November" style="transform: rotate(300deg) translate(100%) rotate(-300deg);"><span>Nov</span></div>
+        <div class="month-slice" data-month="December" style="transform: rotate(330deg) translate(100%) rotate(-330deg);"><span>Dec</span></div>
+    </div>
     <p id="status"></p>
     <div id="data-container"></div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

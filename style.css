@@ -1,9 +1,53 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     text-align: center;
     padding: 20px;
 }
-#crop-list {
-    list-style: none;
-    padding: 0;
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.pie-chart {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #f94144 0% 8.33%, #f3722c 8.33% 16.66%, #f8961e 16.66% 25%,
+        #f9c74f 25% 33.33%, #90be6d 33.33% 41.66%, #43aa8b 41.66% 50%,
+        #4d908e 50% 58.33%, #577590 58.33% 66.66%, #277da1 66.66% 75%,
+        #6a4c93 75% 83.33%, #9d5bb5 83.33% 91.66%, #c857ff 91.66% 100%
+    );
+    cursor: pointer;
+}
+
+.pie-chart div {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+}
+
+.pie-chart div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.crop {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    text-align: left;
 }
