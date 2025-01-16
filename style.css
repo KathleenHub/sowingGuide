@@ -11,36 +11,94 @@ h1 {
 }
 
 .pie-chart {
-    display: inline-block;
     position: relative;
     width: 300px;
     height: 300px;
+    margin: 20px auto;
     border-radius: 50%;
     background: conic-gradient(
-        #f94144 0% 8.33%, #f3722c 8.33% 16.66%, #f8961e 16.66% 25%,
-        #f9c74f 25% 33.33%, #90be6d 33.33% 41.66%, #43aa8b 41.66% 50%,
-        #4d908e 50% 58.33%, #577590 58.33% 66.66%, #277da1 66.66% 75%,
-        #6a4c93 75% 83.33%, #9d5bb5 83.33% 91.66%, #c857ff 91.66% 100%
+        #f94144 0deg 30deg,
+        #f3722c 30deg 60deg,
+        #f8961e 60deg 90deg,
+        #f9c74f 90deg 120deg,
+        #90be6d 120deg 150deg,
+        #43aa8b 150deg 180deg,
+        #4d908e 180deg 210deg,
+        #577590 210deg 240deg,
+        #277da1 240deg 270deg,
+        #6a4c93 270deg 300deg,
+        #9d5bb5 300deg 330deg,
+        #c857ff 330deg 360deg
     );
     cursor: pointer;
 }
 
-.pie-chart div {
+.month-slice {
     position: absolute;
     width: 50%;
     height: 50%;
     transform-origin: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.pie-chart div span {
+.month-slice span {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
+    top: -10px;
+    transform: translateY(-50%);
     font-size: 12px;
     font-weight: bold;
+    color: #fff;
     pointer-events: none;
+}
+
+.month-slice:nth-child(1) {
+    transform: rotate(15deg) translate(100%) rotate(-15deg);
+}
+
+.month-slice:nth-child(2) {
+    transform: rotate(45deg) translate(100%) rotate(-45deg);
+}
+
+.month-slice:nth-child(3) {
+    transform: rotate(75deg) translate(100%) rotate(-75deg);
+}
+
+.month-slice:nth-child(4) {
+    transform: rotate(105deg) translate(100%) rotate(-105deg);
+}
+
+.month-slice:nth-child(5) {
+    transform: rotate(135deg) translate(100%) rotate(-135deg);
+}
+
+.month-slice:nth-child(6) {
+    transform: rotate(165deg) translate(100%) rotate(-165deg);
+}
+
+.month-slice:nth-child(7) {
+    transform: rotate(195deg) translate(100%) rotate(-195deg);
+}
+
+.month-slice:nth-child(8) {
+    transform: rotate(225deg) translate(100%) rotate(-225deg);
+}
+
+.month-slice:nth-child(9) {
+    transform: rotate(255deg) translate(100%) rotate(-255deg);
+}
+
+.month-slice:nth-child(10) {
+    transform: rotate(285deg) translate(100%) rotate(-285deg);
+}
+
+.month-slice:nth-child(11) {
+    transform: rotate(315deg) translate(100%) rotate(-315deg);
+}
+
+.month-slice:nth-child(12) {
+    transform: rotate(345deg) translate(100%) rotate(-345deg);
 }
 
 .crop {
