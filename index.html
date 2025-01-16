@@ -5,24 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sowing Guide</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Sowing Guide</h1>
     <p>Click on a section of the pie chart to view the sowing guide for that month:</p>
-    <div class="pie-chart">
-        <div class="month-slice" data-month="January"><span>Jan</span></div>
-        <div class="month-slice" data-month="February"><span>Feb</span></div>
-        <div class="month-slice" data-month="March"><span>Mar</span></div>
-        <div class="month-slice" data-month="April"><span>Apr</span></div>
-        <div class="month-slice" data-month="May"><span>May</span></div>
-        <div class="month-slice" data-month="June"><span>Jun</span></div>
-        <div class="month-slice" data-month="July"><span>Jul</span></div>
-        <div class="month-slice" data-month="August"><span>Aug</span></div>
-        <div class="month-slice" data-month="September"><span>Sep</span></div>
-        <div class="month-slice" data-month="October"><span>Oct</span></div>
-        <div class="month-slice" data-month="November"><span>Nov</span></div>
-        <div class="month-slice" data-month="December"><span>Dec</span></div>
-    </div>
+    <canvas id="sowingPieChart" width="400" height="400"></canvas>
     <p id="status"></p>
     <div id="data-container"></div>
     <script type="module" src="script.js"></script>
