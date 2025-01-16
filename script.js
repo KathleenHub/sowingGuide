@@ -39,7 +39,7 @@ const sowingPieChart = new Chart(ctx, {
     options: {
         responsive: true,
         plugins: {
-            legend: { position: "top" },
+            legend: { display: false }, // Hide the default legend
         },
         onClick: async (event, elements) => {
             if (elements.length > 0) {
@@ -66,4 +66,30 @@ const sowingPieChart = new Chart(ctx, {
             }
         },
     },
+    plugins: [{
+        id: 'labelsInPie',
+        beforeDraw(chart) {
+            const { ctx, data } = chart;
+            const meta = chart._metasets[0];
+            const total = meta.total;
+
+            data.datasets[0].data.forEach((value, index) => {
+                const { x, y, startAngle, endAngle } = meta.data[index].getProps(['x', 'y', 'startAngle', 'endAngle'], true);
+
+                // Calculate angle for positioning text
+                const angle = (startAngle + endAngle) / 2;
+                const radius = meta.data[index].outerRadius / 2;
+                const textX = x + Math.cos(angle) * radius;
+                const textY = y + Math.sin(angle) * radius;
+
+                ctx.save();
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 14px Arial';
+                ctx.fillText(data.labels[index][0], textX, textY); // First letter of the label
+                ctx.restore();
+            });
+        },
+    }],
 });
